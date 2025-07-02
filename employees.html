@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Employees</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Manage Employees</h1>
+    <div id="clock">--:--:--</div>
+  </header>
+
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="employees.html">Manage Employees</a>
+  </nav>
+
+  <main>
+    <section class="form-section">
+      <h2>Add New Employee</h2>
+      <form>
+        <input type="text" placeholder="Employee ID" required>
+        <input type="text" placeholder="Employee Name" required>
+        <select required>
+          <option value="">Select Status</option>
+          <option>Present</option>
+          <option>Absent</option>
+          <option>Leave</option>
+        </select>
+        <button type="submit">Add Employee</button>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Employee List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Emp ID</th><th>Name</th><th>Status</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EMP004</td><td>Sarah Ali</td><td class="status present">Present</td>
+            <td><button>Edit</button> <button>Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
